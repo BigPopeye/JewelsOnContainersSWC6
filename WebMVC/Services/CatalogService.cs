@@ -23,7 +23,7 @@ namespace WebMVC.Services
         }
 
         public async Task<Catalog> GetCatalogItemsAsync(int page, int size, 
-            int? brand, int? type)
+            int brand, int type)
         {
             var catalogItemsUri = ApiPaths.Catalog.GetAllCatalogItems(_baseUri, 
                                     page, size, brand, type);

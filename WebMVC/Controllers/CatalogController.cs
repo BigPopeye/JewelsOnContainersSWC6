@@ -15,8 +15,8 @@ namespace WebMVC.Controllers
         {
             _service = service;
         }
-        public async Task<IActionResult> Index(int? page, int? brandFilterApplied,
-            int? typesFilterApplied)
+        public async Task<IActionResult> Index(int? page, int brandFilterApplied,
+            int typesFilterApplied)
         {
             var itemsOnPage = 10;
 
@@ -34,8 +34,8 @@ namespace WebMVC.Controllers
                 },
                 Brands = await _service.GetBrandsAsync(),
                 Types = await _service.GetTypesAsync(),
-                BrandFilterApplied = brandFilterApplied ?? 0,
-                TypesFilterApplied = typesFilterApplied ?? 0
+                BrandFilterApplied = brandFilterApplied ,
+                TypesFilterApplied = typesFilterApplied
             };
 
             return View(vm);
